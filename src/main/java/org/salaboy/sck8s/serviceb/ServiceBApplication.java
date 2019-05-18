@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ServiceBApplication implements CommandLineRunner {
 
+    private Logger logger = LoggerFactory.getLogger(ServiceAApplication.class);
+
     public static void main(String[] args) {
         SpringApplication.run(ServiceBApplication.class,
                 args);
@@ -17,13 +19,14 @@ public class ServiceBApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println(" --------- STARTED ---------- ");
+        logger.info(" --------- STARTED ---------- ");
 
     }
 
+    //@TODO: improve return to ASCII ART
     @GetMapping
-    public String sayHello() {
-        return "Hi there from service B";
+    public String sayHelloFromB() {
+        return "Hi there from B";
     }
 
 

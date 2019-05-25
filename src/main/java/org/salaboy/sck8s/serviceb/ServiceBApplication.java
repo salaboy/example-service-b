@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ServiceBApplication implements CommandLineRunner {
 
     private Logger logger = LoggerFactory.getLogger(ServiceBApplication.class);
+    private int count = 0;
 
     public static void main(String[] args) {
         SpringApplication.run(ServiceBApplication.class,
@@ -28,7 +29,8 @@ public class ServiceBApplication implements CommandLineRunner {
     //@TODO: improve return to ASCII ART
     @GetMapping
     public String sayHelloFromB() {
-        return "Hi there from B";
+        count++;
+        return "Hi there from B: " + count;
     }
 
 
